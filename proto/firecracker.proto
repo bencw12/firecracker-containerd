@@ -102,6 +102,7 @@ message LoadSnapshotRequest {
     string SnapshotFilePath = 2;
     string MemFilePath = 3;
     bool EnableUserPF = 4;
+    bool EnableMemTrace = 5;
 }
 
 message LoadResponse {
