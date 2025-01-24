@@ -2,6 +2,10 @@
 # Test image that starts up containerd and the devmapper snapshotter. The default CMD will drop to a bash shell. Overrides
 # to CMD will be provided appended to /bin/bash -c
 FROM golang:1.13-stretch
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+
 ENV PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/go/bin"
 ENV INSTALLROOT="/usr/local"
 ENV DEBIAN_FRONTEND="noninteractive"
